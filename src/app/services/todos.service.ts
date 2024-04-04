@@ -12,4 +12,8 @@ export class TodosService {
     getTodos() {
         return this.Http.get<Item[]>(this.url);
     }
+
+    postTodo(todo: Item) {
+        return this.Http.post<Item>(this.url, todo);
+    }
 }

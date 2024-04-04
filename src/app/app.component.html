@@ -1,8 +1,25 @@
 <main class="main">
     <h1>My ToDo List</h1>
     <label for="addItem">What do you want today?</label>
-    <input type="text" name="addItem" id="addItem" class="lg-text-input" />
-    <button class="btn-primary">Add</button>
+    <input
+        #description
+        type="text"
+        name="addItem"
+        id="addItem"
+        class="lg-text-input"
+    />
+    <button
+        class="btn-primary"
+        (click)="
+            addTodo({
+                description: description.value,
+                done: false
+            });
+            description.value = ''
+        "
+    >
+        Add
+    </button>
 
     @for (todo of todos(); track $index) {
         <app-items [todo]="todo" />
