@@ -16,12 +16,16 @@ export class AppComponent {
     ngOnInit() {
         this.todosService.getTodos().subscribe((data) => {
             this.todos.set(data);
-            console.log(this.todos);
         });
     }
 
     addTodo(todo: Item) {
         this.todosService.postTodo(todo).subscribe();
         this.todos.update((old) => [...old, todo]);
+    }
+
+    deleteTodo(id: string) {
+        this.todosService.deleteTodo(id).subscribe();
+        this.todos.update((ctx) => ctx.filter((todo) => todo.id != id));
     }
 }

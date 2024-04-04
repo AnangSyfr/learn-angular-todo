@@ -16,4 +16,8 @@ export class TodosService {
     postTodo(todo: Item) {
         return this.Http.post<Item>(this.url, todo);
     }
+
+    deleteTodo(id: string) {
+        return this.Http.delete<Item>(`${this.url}/${id}`);
+    }
 }

@@ -1,4 +1,4 @@
-import { Component, input } from "@angular/core";
+import { Component, input, Output, EventEmitter } from "@angular/core";
 
 @Component({
     selector: "app-items",
@@ -9,4 +9,5 @@ import { Component, input } from "@angular/core";
 })
 export class ItemsComponent {
     todo = input.required<Item>();
+    @Output() deleteItem = new EventEmitter<string>();
 }

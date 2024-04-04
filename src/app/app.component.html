@@ -22,6 +22,8 @@
     </button>
 
     @for (todo of todos(); track $index) {
-        <app-items [todo]="todo" />
+        @if (todo.id) {
+            <app-items [todo]="todo" (deleteItem)="deleteTodo(todo.id)" />
+        }
     }
 </main>
