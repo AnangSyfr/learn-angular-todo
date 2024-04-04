@@ -20,4 +20,8 @@ export class TodosService {
     deleteTodo(id: string) {
         return this.Http.delete<Item>(`${this.url}/${id}`);
     }
+
+    putTodo(todo: Item) {
+        return this.Http.put<Item>(`${this.url}/${todo.id}`, todo);
+    }
 }

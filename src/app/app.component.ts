@@ -28,4 +28,8 @@ export class AppComponent {
         this.todosService.deleteTodo(id).subscribe();
         this.todos.update((ctx) => ctx.filter((todo) => todo.id != id));
     }
+
+    editTodo(todo: Item) {
+        this.todosService.putTodo(todo).subscribe();
+    }
 }

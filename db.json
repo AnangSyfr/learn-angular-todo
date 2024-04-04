@@ -2,12 +2,12 @@
   "todos": [
     {
       "id": "2162",
-      "description": "meeting",
-      "done": false
+      "description": "meeting evaluasi",
+      "done": true
     },
     {
-      "description": "makan",
-      "done": false,
+      "description": "makan ayam geprek",
+      "done": true,
       "id": "a9ad"
     },
     {

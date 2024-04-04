@@ -23,7 +23,11 @@
 
     @for (todo of todos(); track $index) {
         @if (todo.id) {
-            <app-items [todo]="todo" (deleteItem)="deleteTodo(todo.id)" />
+            <app-items
+                [todo]="todo"
+                (deleteItem)="deleteTodo(todo.id)"
+                (editItem)="editTodo(todo)"
+            />
         }
     }
 </main>
