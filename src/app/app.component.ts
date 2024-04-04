@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, signal } from "@angular/core";
 import { ItemsComponent } from "./items/items.component";
 import { TodosService } from "./services/todos.service";
 
@@ -11,11 +11,11 @@ import { TodosService } from "./services/todos.service";
 })
 export class AppComponent {
     todosService = inject(TodosService);
-    todos: Item[] = [];
+    todos = signal(this.todosService.todos);
 
     ngOnInit() {
         this.todosService.getTodos().subscribe((data) => {
-            this.todos = data;
+            this.todos.set(data);
             console.log(this.todos);
         });
     }
