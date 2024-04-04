@@ -1,6 +1,6 @@
 <div class="item">
-    <input type="checkbox" id="makan" />
-    <label for="makan">makan</label>
+    <input type="checkbox" [id]="todo().description" [checked]="todo().done" />
+    <label [for]="todo().description">{{ todo().description }}</label>
 
     <div class="btn-wrapper">
         <button class="btn">Edit</button>

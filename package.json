@@ -9,7 +9,7 @@
     "test": "ng test",
     "format": "prettier .",
     "serve:ssr:todo-app": "node dist/todo-app/server/server.mjs",
-    "server": "json-server --watch db.json --port 8000"
+    "server": "json-server --watch db.json --port 8191"
   },
   "private": true,
   "dependencies": {

@@ -1,5 +1,6 @@
-import { Component } from "@angular/core"
-import { ItemsComponent } from "./items/items.component"
+import { Component, inject } from "@angular/core";
+import { ItemsComponent } from "./items/items.component";
+import { TodosService } from "./services/todos.service";
 
 @Component({
     selector: "app-root",
@@ -9,5 +10,13 @@ import { ItemsComponent } from "./items/items.component"
     styleUrl: "./app.component.css",
 })
 export class AppComponent {
-    name = "Anang"
+    todosService = inject(TodosService);
+    todos: Item[] = [];
+
+    ngOnInit() {
+        this.todosService.getTodos().subscribe((data) => {
+            this.todos = data;
+            console.log(this.todos);
+        });
+    }
 }

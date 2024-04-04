@@ -4,5 +4,7 @@
     <input type="text" name="addItem" id="addItem" class="lg-text-input" />
     <button class="btn-primary">Add</button>
 
-    <app-items />
+    @for (todo of todos; track $index) {
+        <app-items [todo]="todo" />
+    }
 </main>
